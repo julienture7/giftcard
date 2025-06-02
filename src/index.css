@@ -2,78 +2,246 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import system fonts and set up font variables */
+:root {
+  /* Color variables */
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-night-700: #1a1b26;
+  --color-night-800: #16161e;
+  --color-night-900: #13131a;
+  
+  /* Animation variables */
+  --transition-fast: 150ms;
+  --transition-standard: 200ms;
+  --transition-slow: 300ms;
+  
+  /* Focus ring styles */
+  --focus-ring-color: rgba(16, 185, 129, 0.6);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 1px;
+}
+
+/* Base styles */
 @layer base {
-  :root {
-    --background: 220 13% 12%; /* night-700 */
-    --foreground: 210 20% 75%; /* day-300 */
-
-    --card: 220 15% 10%; /* night-800 for cards */
-    --card-foreground: 210 20% 75%;
-
-    --popover: 220 17% 7%; /* night-900 for popovers/dropdowns */
-    --popover-foreground: 210 20% 75%;
-
-    --primary: 145 63% 49%; /* green-500 */
-    --primary-foreground: 0 0% 0%; /* black for text on primary */
-
-    --secondary: 220 13% 30%; /* night-500 */
-    --secondary-foreground: 210 20% 75%;
-
-    --muted: 220 13% 20%; /* night-600 */
-    --muted-foreground: 210 10% 50%; /* day-500 */
-
-    --accent: 220 13% 40%; /* night-400 */
-    --accent-foreground: 210 20% 75%;
-
-    --destructive: 0 72% 51%; /* red-600 */
-    --destructive-foreground: 0 0% 0%;
-
-    --border: 220 13% 30%; /* night-500 for borders */
-    --input: 220 13% 20%; /* night-600 for inputs */
-    --ring: 145 63% 49%; /* green-500 for focus rings */
-
-    --radius: 0.5rem;
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+                 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 
+                 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-
-  .dark {
-    /* Keep the same variables as :root for a forced dark theme */
-    --background: 220 13% 12%;
-    --foreground: 210 20% 75%;
+  
+  body {
+    @apply bg-night-700 text-day-300;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Improved focus styles for accessibility */
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+    @apply rounded-md;
+  }
+  
+  /* Make buttons and interactive elements more accessible */
+  button, a, input, select, textarea, [role="button"] {
+    transition: all var(--transition-standard) ease-in-out;
+  }
+  
+  /* Ensure links are clearly distinguishable */
+  a:not([class]) {
+    @apply text-green-500 underline underline-offset-2 hover:text-green-400;
   }
 }
 
-@layer base {
+/* Custom scrollbar styling */
+@layer components {
+  /* Webkit scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-night-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-night-600 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-night-500;
+  }
+  
+  /* Firefox scrollbar styling */
   * {
-    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-night-600) var(--color-night-800);
   }
-  body {
-    @apply bg-background text-foreground;
-    @apply flex min-h-dvh flex-col antialiased;
+  
+  /* Hide scrollbar but keep functionality for certain elements */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-  body * { 
-    @apply shrink-0;
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  main {
-    @apply grow;
+}
+
+/* Global animations */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .animate-fadeInRight {
+    animation: fadeInRight 0.5s ease-out forwards;
+  }
+  
+  .animate-fadeInLeft {
+    animation: fadeInLeft 0.5s ease-out forwards;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+  
+  /* Staggered animations for children */
+  .stagger-children > * {
+    opacity: 0;
+  }
+  
+  .stagger-children > *:nth-child(1) { animation: fadeInUp 0.5s 0.1s forwards; }
+  .stagger-children > *:nth-child(2) { animation: fadeInUp 0.5s 0.2s forwards; }
+  .stagger-children > *:nth-child(3) { animation: fadeInUp 0.5s 0.3s forwards; }
+  .stagger-children > *:nth-child(4) { animation: fadeInUp 0.5s 0.4s forwards; }
+  .stagger-children > *:nth-child(5) { animation: fadeInUp 0.5s 0.5s forwards; }
+  .stagger-children > *:nth-child(6) { animation: fadeInUp 0.5s 0.6s forwards; }
 }
 
 /* Custom utility classes */
-.bg-score-1 {
-  @apply bg-red-600;
+.text-balance {
+  text-wrap: balance;
 }
-.bg-score-2 {
-  @apply bg-orange-600;
+
+.text-pretty {
+  text-wrap: pretty;
 }
-.bg-score-3 {
-  @apply bg-amber-500;
+
+/* Glass effect for cards and overlays */
+.glass-effect {
+  @apply bg-night-800/80 backdrop-blur-md border border-night-600/50;
 }
-.bg-score-4 {
-  @apply bg-lime-500;
+
+/* Gradient text effect */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500;
 }
-.bg-score-5 {
-  @apply bg-green-500;
+
+/* Improved card hover effects */
+.hover-card-effect {
+  transition: transform var(--transition-standard), 
+              box-shadow var(--transition-standard),
+              border-color var(--transition-standard);
 }
-.text-verified-badge {
-  @apply text-emerald-400;
+
+.hover-card-effect:hover {
+  @apply transform -translate-y-1 shadow-lg shadow-night-900/30 border-green-500/30;
+}
+
+/* Subtle glow effects for primary elements */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Responsive container padding adjustments */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
 }
