@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import App from '../App';
 import GiftCardDetail from './GiftCardDetail';
 import Checkout from './Checkout';
 import { getGiftCardById, getCategoryBySlug, getGiftCardsByCategory } from '../data/giftCardData';
@@ -10,6 +9,7 @@ import PrivacyPolicyPage from './PrivacyPolicyPage';
 import CategoryPage from './CategoryPage';
 import Header from './Header';
 import Footer from './Footer';
+import HomePage from './HomePage';
 
 // Route types for better type safety
 type RouteType = 
@@ -388,7 +388,7 @@ const Routes: React.FC = () => {
 
       case 'home':
       default:
-        content = <App />;
+        content = <HomePage />;
         break;
     }
 
