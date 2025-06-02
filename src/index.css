@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 12%; /* night-700 */
+    --foreground: 210 20% 75%; /* day-300 */
+
+    --card: 220 15% 10%; /* night-800 for cards */
+    --card-foreground: 210 20% 75%;
+
+    --popover: 220 17% 7%; /* night-900 for popovers/dropdowns */
+    --popover-foreground: 210 20% 75%;
+
+    --primary: 145 63% 49%; /* green-500 */
+    --primary-foreground: 0 0% 0%; /* black for text on primary */
+
+    --secondary: 220 13% 30%; /* night-500 */
+    --secondary-foreground: 210 20% 75%;
+
+    --muted: 220 13% 20%; /* night-600 */
+    --muted-foreground: 210 10% 50%; /* day-500 */
+
+    --accent: 220 13% 40%; /* night-400 */
+    --accent-foreground: 210 20% 75%;
+
+    --destructive: 0 72% 51%; /* red-600 */
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 220 13% 30%; /* night-500 for borders */
+    --input: 220 13% 20%; /* night-600 for inputs */
+    --ring: 145 63% 49%; /* green-500 for focus rings */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Keep the same variables as :root for a forced dark theme */
+    --background: 220 13% 12%;
+    --foreground: 210 20% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply flex min-h-dvh flex-col antialiased;
+  }
+  body * { 
+    @apply shrink-0;
+  }
+  main {
+    @apply grow;
+  }
+}
+
+/* Custom utility classes */
+.bg-score-1 {
+  @apply bg-red-600;
+}
+.bg-score-2 {
+  @apply bg-orange-600;
+}
+.bg-score-3 {
+  @apply bg-amber-500;
+}
+.bg-score-4 {
+  @apply bg-lime-500;
+}
+.bg-score-5 {
+  @apply bg-green-500;
+}
+.text-verified-badge {
+  @apply text-emerald-400;
+}
