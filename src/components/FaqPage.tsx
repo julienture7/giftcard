@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+{`import React, { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, ChevronUp, Plus, Mail, MessageSquare, Send } from 'lucide-react';
 
 // FAQ data structure
@@ -62,7 +62,7 @@ const FaqPage: React.FC = () => {
         {
           id: 'general-5',
           question: 'What countries do you support?',
-          answer: 'We offer gift cards that can be used globally as well as region-specific gift cards. Each gift card listing specifies the regions where it can be used. We serve customers from any location, but it\'s your responsibility to ensure the gift card you purchase can be used in your region.'
+          answer: 'We offer gift cards that can be used globally as well as region-specific gift cards. Each gift card listing specifies the regions where it can be used. We serve customers from any location, but it\\'s your responsibility to ensure the gift card you purchase can be used in your region.'
         }
       ]
     },
@@ -117,13 +117,13 @@ const FaqPage: React.FC = () => {
         },
         {
           id: 'giftcards-3',
-          question: 'What if my gift card doesn\'t work?',
-          answer: 'In the rare event that a gift card code doesn\'t work, please contact our support team immediately with your order details. We'll provide a replacement or refund. All our gift cards are purchased from legitimate sources and tested before delivery.'
+          question: 'What if my gift card doesn\\'t work?',
+          answer: 'In the rare event that a gift card code doesn\\'t work, please contact our support team immediately with your order details. We\\'ll provide a replacement or refund. All our gift cards are purchased from legitimate sources and tested before delivery.'
         },
         {
           id: 'giftcards-4',
           question: 'Do gift cards expire?',
-          answer: 'Most gift cards do not expire, but this depends on the retailer\'s policy. The expiration policy, if any, is mentioned in the gift card details page. We recommend using your gift card soon after purchase to avoid any potential issues.'
+          answer: 'Most gift cards do not expire, but this depends on the retailer\\'s policy. The expiration policy, if any, is mentioned in the gift card details page. We recommend using your gift card soon after purchase to avoid any potential issues.'
         },
         {
           id: 'giftcards-5',
@@ -173,28 +173,28 @@ const FaqPage: React.FC = () => {
       faqs: [
         {
           id: 'troubleshooting-1',
-          question: 'My payment was confirmed but I didn\'t receive my gift card',
-          answer: 'If your payment has been confirmed but you haven\'t received your gift card, please check your spam/junk folder if you provided an email. If you purchased without an email, check the order status page using your order ID. If you still can\'t find your gift card, please contact our support team with your order ID and transaction details.'
+          question: 'My payment was confirmed but I didn\\'t receive my gift card',
+          answer: 'If your payment has been confirmed but you haven\\'t received your gift card, please check your spam/junk folder if you provided an email. If you purchased without an email, check the order status page using your order ID. If you still can\\'t find your gift card, please contact our support team with your order ID and transaction details.'
         },
         {
           id: 'troubleshooting-2',
-          question: 'I sent a payment but it\'s not being recognized by the system',
-          answer: 'Cryptocurrency transactions can sometimes take time to confirm, especially during periods of network congestion. For Bitcoin payments, please wait for at least 1 confirmation. For Monero, wait for 10 confirmations. If your payment still isn\'t recognized after the expected confirmation time, contact support with your order ID and transaction details.'
+          question: 'I sent a payment but it\\'s not being recognized by the system',
+          answer: 'Cryptocurrency transactions can sometimes take time to confirm, especially during periods of network congestion. For Bitcoin payments, please wait for at least 1 confirmation. For Monero, wait for 10 confirmations. If your payment still isn\\'t recognized after the expected confirmation time, contact support with your order ID and transaction details.'
         },
         {
           id: 'troubleshooting-3',
-          question: 'The gift card code doesn\'t work or shows as already redeemed',
-          answer: 'If your gift card code doesn\'t work or shows as already redeemed, please contact our support team immediately. Provide your order ID, the gift card in question, and a description of the error you\'re receiving. We\'ll investigate and provide a replacement or refund if necessary.'
+          question: 'The gift card code doesn\\'t work or shows as already redeemed',
+          answer: 'If your gift card code doesn\\'t work or shows as already redeemed, please contact our support team immediately. Provide your order ID, the gift card in question, and a description of the error you\\'re receiving. We\\'ll investigate and provide a replacement or refund if necessary.'
         },
         {
           id: 'troubleshooting-4',
-          question: 'I can\'t access my account',
-          answer: 'If you\'re having trouble accessing your account, try resetting your password using the "Forgot Password" link. If that doesn\'t work, make sure you\'re using the correct email address. If you\'re still having issues, contact our support team for assistance.'
+          question: 'I can\\'t access my account',
+          answer: 'If you\\'re having trouble accessing your account, try resetting your password using the "Forgot Password" link. If that doesn\\'t work, make sure you\\'re using the correct email address. If you\\'re still having issues, contact our support team for assistance.'
         },
         {
           id: 'troubleshooting-5',
           question: 'The website is loading slowly or not at all',
-          answer: 'If the website is loading slowly or not at all, try clearing your browser cache and cookies, or try a different browser. If you\'re using Tor or a VPN, try disconnecting and reconnecting to a different server. If the problem persists, it might be a temporary issue on our end. Please try again later or contact support if the issue continues.'
+          answer: 'If the website is loading slowly or not at all, try clearing your browser cache and cookies, or try a different browser. If you\\'re using Tor or a VPN, try disconnecting and reconnecting to a different server. If the problem persists, it might be a temporary issue on our end. Please try again later or contact support if the issue continues.'
         }
       ]
     }
@@ -316,7 +316,7 @@ const FaqPage: React.FC = () => {
   const highlightText = (text: string) => {
     if (!searchQuery.trim()) return text;
     
-    const parts = text.split(new RegExp(`(${searchQuery})`, 'gi'));
+    const parts = text.split(new RegExp(\`(\${searchQuery})\`, 'gi'));
     return (
       <>
         {parts.map((part, i) => 
@@ -430,11 +430,11 @@ const FaqPage: React.FC = () => {
                         
                         {/* FAQ Answer */}
                         <div 
-                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          className={\`overflow-hidden transition-all duration-300 ease-in-out \${
                             expandedFaqs[faq.id] 
                               ? 'max-h-96 opacity-100' 
                               : 'max-h-0 opacity-0'
-                          }`}
+                          }\`}
                         >
                           <div className="p-4 pt-0 text-day-400">
                             {highlightText(faq.answer)}
@@ -507,11 +507,11 @@ const FaqPage: React.FC = () => {
             <button
               type="submit"
               disabled={formStatus === 'submitting'}
-              className={`px-6 py-3 rounded-lg font-medium flex items-center justify-center mx-auto transition-colors duration-200 ${
+              className={\`px-6 py-3 rounded-lg font-medium flex items-center justify-center mx-auto transition-colors duration-200 \${
                 formStatus === 'submitting'
                   ? 'bg-night-600 text-day-500 cursor-not-allowed'
                   : 'bg-green-600 hover:bg-green-700 text-white'
-              }`}
+              }\`}
             >
               {formStatus === 'submitting' ? (
                 <>
@@ -552,4 +552,4 @@ const FaqPage: React.FC = () => {
   );
 };
 
-export default FaqPage;
+export default FaqPage;`}

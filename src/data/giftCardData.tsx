@@ -1,4 +1,4 @@
-import React from 'react';
+{`import React from 'react';
 import { 
   ShoppingBag, Utensils, Film, Gamepad2, Plane, Gift, 
   Smartphone, Laptop, Home, Backpack, Coffee, Ticket, 
@@ -124,7 +124,8 @@ export const categories: Category[] = [
     slug: 'fashion',
     icon: <Shirt className="size-6" />,
     description: 'Stay stylish with gift cards for popular clothing and accessory brands. Shop the latest trends without compromising your privacy.',
-    featuredCards: ['nike', 'adidas', 'hm', 'zara']
+    featuredCards: ['nike', 'adidas', 'hm', '
+zara']
   }
 ];
 
@@ -208,12 +209,12 @@ const commonFAQs: Record<string, FAQ[]> = {
       answer: 'This depends on the specific gift card and its regional restrictions. Check the gift card details for region availability information.'
     },
     {
-      question: 'What happens if my gift card code doesn\'t work?',
-      answer: 'In the rare event that a gift card code doesn\'t work, please contact our support team immediately with your order details. We'll provide a replacement or refund.'
+      question: 'What happens if my gift card code doesn\\'t work?',
+      answer: 'In the rare event that a gift card code doesn\\'t work, please contact our support team immediately with your order details. We\\'ll provide a replacement or refund.'
     },
     {
       question: 'Can I combine multiple gift cards?',
-      answer: 'Yes, most retailers allow you to use multiple gift cards for a single purchase. You can check the specific retailer\'s terms for any limitations.'
+      answer: 'Yes, most retailers allow you to use multiple gift cards for a single purchase. You can check the specific retailer\\'s terms for any limitations.'
     }
   ],
   refunds: [
@@ -236,8 +237,8 @@ export const giftCards: GiftCard[] = [
     name: 'Amazon',
     slug: 'amazon',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png',
-    description: 'Shop millions of products with the world\'s largest online retailer',
-    detailedDescription: 'Amazon gift cards provide access to the world\'s largest online marketplace. Purchase everything from books and electronics to clothing and household items. Amazon gift cards never expire and can be used across multiple purchases.',
+    description: 'Shop millions of products with the world\\'s largest online retailer',
+    detailedDescription: 'Amazon gift cards provide access to the world\\'s largest online marketplace. Purchase everything from books and electronics to clothing and household items. Amazon gift cards never expire and can be used across multiple purchases.',
     category: categories.find(c => c.id === 'shopping')!,
     priceRange: {
       min: 25,
@@ -278,7 +279,7 @@ export const giftCards: GiftCard[] = [
     name: 'Walmart',
     slug: 'walmart',
     logo: 'https://cdn.corporate.walmart.com/dims4/default/748f830/2147483647/strip/true/crop/2389x930+0+0/resize/1200x467!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a70f175381350c98%2Fwalmart-logos-lockupwtag-horiz-blu-rgb.png',
-    description: 'Save money. Live better. Shop at America\'s largest retail chain.',
+    description: 'Save money. Live better. Shop at America\\'s largest retail chain.',
     detailedDescription: 'Walmart gift cards can be used at any Walmart store or on Walmart.com. Shop for groceries, electronics, furniture, clothing, and more at everyday low prices. Walmart gift cards have no fees and never expire, making them perfect for budget-conscious shoppers.',
     category: categories.find(c => c.id === 'shopping')!,
     priceRange: {
@@ -298,15 +299,15 @@ export const giftCards: GiftCard[] = [
       'https://cdn.corporate.walmart.com/dims4/default/748f830/2147483647/strip/true/crop/2389x930+0+0/resize/1200x467!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a70f175381350c98%2Fwalmart-logos-lockupwtag-horiz-blu-rgb.png',
       'https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
     ],
-    terms: 'Walmart Gift Cards can be used in any Walmart store or Sam\'s Club in the U.S. or Puerto Rico, or online at Walmart.com or Samsclub.com. Gift cards cannot be returned or refunded for cash unless required by law. Protect this card like cash; it cannot be replaced if lost or stolen without proof of purchase and original card number.',
+    terms: 'Walmart Gift Cards can be used in any Walmart store or Sam\\'s Club in the U.S. or Puerto Rico, or online at Walmart.com or Samsclub.com. Gift cards cannot be returned or refunded for cash unless required by law. Protect this card like cash; it cannot be replaced if lost or stolen without proof of purchase and original card number.',
     redemptionInstructions: 'To redeem in-store: Present the gift card at checkout. To redeem online: During checkout, select "Gift Card" as your payment method and enter the card number and PIN (found by scratching off the silver coating on the back of the card).',
     regions: ['us', 'puerto-rico'],
     faqs: [
       ...commonFAQs.general,
       ...commonFAQs.usage,
       {
-        question: 'Can I use my Walmart gift card at Sam\'s Club?',
-        answer: 'Yes, Walmart gift cards can be used at Sam\'s Club stores and on SamsClub.com, even without a Sam\'s Club membership.'
+        question: 'Can I use my Walmart gift card at Sam\\'s Club?',
+        answer: 'Yes, Walmart gift cards can be used at Sam\\'s Club stores and on SamsClub.com, even without a Sam\\'s Club membership.'
       },
       {
         question: 'Can I check my Walmart gift card balance?',
@@ -522,7 +523,7 @@ export const giftCards: GiftCard[] = [
       },
       {
         question: 'Can I reload my Starbucks gift card?',
-        answer: 'Yes, Starbucks gift cards are reloadable. You can add funds to your card in-store or through the Starbucks app if you\'ve registered the card to your account.'
+        answer: 'Yes, Starbucks gift cards are reloadable. You can add funds to your card in-store or through the Starbucks app if you\\'ve registered the card to your account.'
       }
     ],
     createdAt: '2023-02-05T00:00:00Z'
@@ -555,7 +556,7 @@ export const giftCards: GiftCard[] = [
       'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
     ],
     terms: 'Netflix gift cards can only be redeemed at netflix.com/redeem. Gift cards are not redeemable for cash except where required by law. Netflix is not responsible for lost or stolen cards or unauthorized use. Unused balance will remain on your Netflix account and cannot be transferred.',
-    redemptionInstructions: 'To redeem: 1) Go to netflix.com/redeem. 2) Enter the gift card PIN. 3) If you\'re a new member, you\'ll need to create a Netflix account. If you\'re an existing member, the gift card balance will be added to your account as a credit.',
+    redemptionInstructions: 'To redeem: 1) Go to netflix.com/redeem. 2) Enter the gift card PIN. 3) If you\\'re a new member, you\\'ll need to create a Netflix account. If you\\'re an existing member, the gift card balance will be added to your account as a credit.',
     regions: ['global', 'us', 'eu', 'asia', 'australia', 'canada'],
     faqs: [
       ...commonFAQs.general,
@@ -639,7 +640,7 @@ export const giftCards: GiftCard[] = [
       'https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
     ],
     terms: 'Hulu gift cards can only be redeemed at hulu.com/start/gifting. Gift cards are not redeemable for cash except where required by law. Hulu is not responsible for lost or stolen cards or unauthorized use. Unused balance will remain in your Hulu account.',
-    redemptionInstructions: 'To redeem: 1) Go to hulu.com/start/gifting. 2) Enter the gift card code. 3) If you\'re a new member, you\'ll need to create a Hulu account. If you\'re an existing member, the gift card balance will be added to your account as a credit.',
+    redemptionInstructions: 'To redeem: 1) Go to hulu.com/start/gifting. 2) Enter the gift card code. 3) If you\\'re a new member, you\\'ll need to create a Hulu account. If you\\'re an existing member, the gift card balance will be added to your account as a credit.',
     regions: ['us'],
     faqs: [
       ...commonFAQs.general,
@@ -736,7 +737,7 @@ export const giftCards: GiftCard[] = [
       },
       {
         question: 'Do Steam gift cards have regional restrictions?',
-        answer: 'Yes, Steam gift cards are typically region-specific. A gift card purchased for use in one region may not work in another region due to Steam\'s regional pricing policies.'
+        answer: 'Yes, Steam gift cards are typically region-specific. A gift card purchased for use in one region may not work in another region due to Steam\\'s regional pricing policies.'
       }
     ],
     createdAt: '2023-01-05T00:00:00Z'
@@ -820,7 +821,7 @@ export const giftCards: GiftCard[] = [
       },
       {
         question: 'Can I use my Xbox gift card on Windows PC?',
-        answer: 'Yes, Xbox gift cards can be used to purchase games and content for Windows PC through the Microsoft Store, as long as you\'re signed in with the same Microsoft account.'
+        answer: 'Yes, Xbox gift cards can be used to purchase games and content for Windows PC through the Microsoft Store, as long as you\\'re signed in with the same Microsoft account.'
       }
     ],
     createdAt: '2023-01-25T00:00:00Z'
@@ -895,7 +896,7 @@ export const giftCards: GiftCard[] = [
       'https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80'
     ],
     terms: 'Airbnb gift cards can only be redeemed on Airbnb.com or the Airbnb app. Gift cards are not redeemable for cash except where required by law. Airbnb is not responsible for lost or stolen cards or unauthorized use. Unused balance will remain in your Airbnb account.',
-    redemptionInstructions: 'To redeem: 1) Go to airbnb.com/gift. 2) Enter the gift card code. 3) The funds will be added to your Airbnb account as travel credit. If you don\'t have an account, you\'ll need to create one.',
+    redemptionInstructions: 'To redeem: 1) Go to airbnb.com/gift. 2) Enter the gift card code. 3) The funds will be added to your Airbnb account as travel credit. If you don\\'t have an account, you\\'ll need to create one.',
     regions: ['global', 'us', 'eu', 'uk', 'asia', 'australia', 'canada'],
     faqs: [
       ...commonFAQs.general,
@@ -948,7 +949,7 @@ export const giftCards: GiftCard[] = [
       },
       {
         question: 'Can I use my Hotels.com gift card for taxes and fees?',
-        answer: 'Yes, Hotels.com gift cards can be used to pay for the entire booking, including taxes and fees. If your gift card balance doesn\'t cover the full amount, you can pay the difference with another payment method.'
+        answer: 'Yes, Hotels.com gift cards can be used to pay for the entire booking, including taxes and fees. If your gift card balance doesn\\'t cover the full amount, you can pay the difference with another payment method.'
       }
     ],
     createdAt: '2023-04-01T00:00:00Z'
@@ -1052,4 +1053,4 @@ export const searchGiftCards = (query: string): GiftCard[] => {
     card.description.toLowerCase().includes(lowerCaseQuery) ||
     card.detailedDescription.toLowerCase().includes(lowerCaseQuery)
   );
-};
+};`}
